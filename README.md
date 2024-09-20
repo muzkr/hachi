@@ -55,7 +55,7 @@ successfully installed and running, it will spit out a capital "C" every few sec
 Since Hachi can load custom programs, it is possible to update Hachi itself or restore the BHBL simply through the serial port.
 
 
-### Recovering BHBL with OpenOCD
+### Restore BHBL with OpenOCD
 
 We must provide the target address with the .bin firmware.
 

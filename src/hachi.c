@@ -242,19 +242,17 @@ int main()
 
         } // while
 
-        // When we reach here the programming process has finished, with either
-        // success or not ..
-        // 0. if we received an empty file (we received EOT instead of the initial
-        //  data packet for example), neither the program info record nor the
-        //  program area was touched
-        // 1. or if it's a success we have properly saved the program code & updated
-        //  the program info record
-        // 2. or if we failed as early as at the first block, as in situation #0
-        //  there is not a single flash sector ever been touched
-        // 3. otherwise we have erased the program info record at the arrival of the
-        //  first block
-        // In either case of the above, we end up with a proper state, and there
-        // is nothing futher to do
+        // By the time we get here, the programming process is over, whether it was 
+        // successful or not
+        // 0. If we received an empty file (e.g., we received an EOT instead of an initial 
+        //  packet), neither the program information record nor the program area is ever touched.
+        // 1. or if successful, we have correctly saved the program code and updated the program 
+        //  information record
+        // 2. or if we failed as early as the first block, as in case #0 none of the flash
+        //  sectors have been touched
+        // 3. otherwise, we have erased the program information record when the first program
+        //  block arrives
+        // In either case, we end up with a suitable state, and there's nothing further to do
 
     } // while
 

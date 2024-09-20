@@ -10,8 +10,6 @@
 #define UARTx uart1
 #endif
 
-#define LED_PIN PICO_DEFAULT_LED_PIN
-
 #define SOH 0x01
 #define EOT 0x04
 #define ACK 0x06
