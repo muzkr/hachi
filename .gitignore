@@ -57,5 +57,5 @@ build-*/
 build_*/
 .vscode/
 
-openocd.cfg
 openocd/
+CMakePresets.json

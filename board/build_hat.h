@@ -9,13 +9,13 @@
 //       SHOULD ONLY CONSIST OF PREPROCESSOR DIRECTIVES
 // -----------------------------------------------------
 
-// This header may be included by other board headers as "boards/pico.h"
+// This header may be included by other board headers as "boards/build_hat.h"
 
-#ifndef _BOARD_BUILDHAT_H
-#define _BOARD_BUILDHAT_H
+#ifndef _BOARDS_BUILD_HAT_H
+#define _BOARDS_BUILD_HAT_H
 
 // For board detection
-#define RASPBERRYPI_BUILDHAT
+#define RPI_BUILD_HAT
 
 // --- UART ---
 #ifndef PICO_DEFAULT_UART
@@ -31,6 +31,7 @@
 // --- LED ---
 
 #ifndef PICO_DEFAULT_LED_PIN
+// Red LED
 #define PICO_DEFAULT_LED_PIN 14
 #endif
 // no PICO_DEFAULT_WS2812_PIN
@@ -40,27 +41,31 @@
 #define PICO_DEFAULT_I2C 0
 #endif
 #ifndef PICO_DEFAULT_I2C_SDA_PIN
-#define PICO_DEFAULT_I2C_SDA_PIN 4
+#define PICO_DEFAULT_I2C_SDA_PIN 8
 #endif
 #ifndef PICO_DEFAULT_I2C_SCL_PIN
-#define PICO_DEFAULT_I2C_SCL_PIN 5
+#define PICO_DEFAULT_I2C_SCL_PIN 9
 #endif
 
 // --- SPI ---
 #ifndef PICO_DEFAULT_SPI
-#define PICO_DEFAULT_SPI 0
+#define PICO_DEFAULT_SPI 1
 #endif
 #ifndef PICO_DEFAULT_SPI_SCK_PIN
-#define PICO_DEFAULT_SPI_SCK_PIN 18
+// Port 0 ID2
+#define PICO_DEFAULT_SPI_SCK_PIN 10
 #endif
 #ifndef PICO_DEFAULT_SPI_TX_PIN
-#define PICO_DEFAULT_SPI_TX_PIN 19
+// Port 0 ID1
+#define PICO_DEFAULT_SPI_TX_PIN 11
 #endif
 #ifndef PICO_DEFAULT_SPI_RX_PIN
-#define PICO_DEFAULT_SPI_RX_PIN 16
+// Port 2 ID2
+#define PICO_DEFAULT_SPI_RX_PIN 24
 #endif
 #ifndef PICO_DEFAULT_SPI_CSN_PIN
-#define PICO_DEFAULT_SPI_CSN_PIN 17
+// Port 2 ID1
+#define PICO_DEFAULT_SPI_CSN_PIN 25
 #endif
 
 // --- FLASH ---
@@ -76,15 +81,10 @@
 #endif
 
 // Drive high to force power supply into PWM mode (lower ripple on 3V3 at light loads)
-#define PICO_SMPS_MODE_PIN 23
+// #define PICO_SMPS_MODE_PIN 23
 
 #ifndef PICO_RP2040_B0_SUPPORTED
 #define PICO_RP2040_B0_SUPPORTED 1
-#endif
-
-// The GPIO Pin used to read VBUS to determine if the device is battery powered.
-#ifndef PICO_VBUS_PIN
-#define PICO_VBUS_PIN 24
 #endif
 
 // The GPIO Pin used to monitor VSYS. Typically you would use this with ADC.
@@ -93,4 +93,4 @@
 #define PICO_VSYS_PIN 29
 #endif
 
-#endif // _BOARD_BUILDHAT_H
+#endif // _BOARDS_BUILD_HAT_H
